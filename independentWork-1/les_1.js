@@ -1,61 +1,76 @@
-//! Условное ветвление: if, '?'
-//if (строка с нулём)
-//alert(`0`);
+//=======================================================================
+//!===================   Условное ветвление: if, '?'  ===================
+//=======================================================================
+//#1
+alert(`0`);
 
-//let nameJS = prompt("Какое «официальное» название JavaScript?", "");
-//if (nameJS === "ECMAScript") {
-//  alert(`Ваш ответ ${nameJS} - верный`);
-//} else if (nameJS !== null) {
-//  alert(`ответ "${nameJS}" не правильный, верный - ECMAScript`);
-//} else {
-//  alert(`Не нужно нажимать отмену`);
-//}
+// #2
+let nameJS = prompt("Какое «официальное» название JavaScript?", "");
+if (nameJS === "ECMAScript") {
+  alert(`Ваш ответ ${nameJS} - верный`);
+} else if (nameJS !== null) {
+  alert(`ответ "${nameJS}" не правильный, верный - ECMAScript`);
+} else {
+  alert(`Не нужно нажимать отмену`);
+}
 
-//let sign = +prompt("введите число", "");
-//if (sign < 0) {
-//  alert(`${sign} < нуля`);
-//} else if (sign > 0) {
-//  alert(`${sign} > нуля`);
-//} else {
-//  alert(`${sign} = нулю`);
-//}
+// #3
+let sign = +prompt("введите число", "");
+if (sign < 0) {
+  alert(`${sign} < нуля`);
+} else if (sign > 0) {
+  alert(`${sign} > нуля`);
+} else {
+  alert(`${sign} = нулю`);
+}
 
-//let a = +prompt("введите число A", "");
-//let b = +prompt("введите число B", "");
-//alert(a + b < 4 ? `${a} + ${b} < 4` : `${a} + ${b} >= 4`);
+// #4
+let a = +prompt("введите число A", "");
+let b = +prompt("введите число B", "");
+alert(a + b < 4 ? `${a} + ${b} < 4` : `${a} + ${b} >= 4`);
 
-//let yourName = prompt("вы 'Сотрудник', 'Директор' или 'Проходимец' ?", "");
-//yourName == "Сотрудник"
-//  ? alert("привет")
-//  : yourName == "Директор"
-//  ? alert("Здравствуйте")
-//  : alert("не наш");
+//#5
+let yourName = prompt("вы 'Сотрудник', 'Директор' или 'Проходимец' ?", "");
+yourName == "Сотрудник"
+  ? alert("привет")
+  : yourName == "Директор"
+  ? alert("Здравствуйте")
+  : alert("не наш");
 
-// ! Типы данных
-//let name11 = "Ilya";
-//alert(`hello ${1}`); // 1
-//alert(`hello ${"name"}`); // name - string
-//alert(`hello ${name11}`); // Ilya
+//=======================================================================
+//!=======================  Типы данных  ================================
+//=======================================================================
+let name11 = "Ilya";
+alert(`hello ${1}`); // 1
+alert(`hello ${"name"}`); // name - string
+alert(`hello ${name11}`); // Ilya
 
-// ! Преобразование типов
-//alert(typeof Number("125")); //number
-//alert(typeof +"125"); //number
-//alert(typeof Number(" 435 ")); //number
-//alert(typeof Boolean("true")); //boolean
-//alert(
-//  `${Boolean(null)}, ${Boolean(0)}, ${Boolean(undefined)}, ${Boolean(
-//    -1
-//  )}  ${Boolean(NaN)}`
-//); //false, false, false, true  false
+//=======================================================================
+//!===================   Преобразование типов  ==========================
+//=======================================================================
+alert(typeof Number("125")); //number
+alert(typeof +"125"); //number
+alert(typeof Number(" 435 ")); //number
+alert(typeof Boolean("true")); //boolean
+alert(
+  `${Boolean(null)}, ${Boolean(0)}, ${Boolean(undefined)}, ${Boolean(
+    -1
+  )}  ${Boolean(NaN)}`
+); //false, false, false, true  false
 
-//// ! Числа
-//const prom1 = prompt("Введите 1ое число", "");
-//const prom2 = prompt("Введите 2ое число", "");
-//alert(+prom1 + Number(prom2));
+//=======================================================================
+//!============================   Числа  ================================
+//=======================================================================
+// #1
+const prom1 = prompt("Введите 1ое число", "");
+const prom2 = prompt("Введите 2ое число", "");
+alert(+prom1 + Number(prom2));
 
-//alert(Math.round(6.35));
-//alert(Math.round(6.35 * 10) / 10); // 6.4
+// #2
+alert(Math.round(6.35));
+alert(Math.round(6.35 * 10) / 10); // 6.4
 
+// #3
 const readNumber = () => {
   const numProto = prompt(`Введите число`, ``);
   if (isNaN(numProto)) {
@@ -67,22 +82,27 @@ const readNumber = () => {
     alert(`${numProto} - вы ввели`);
   }
 };
-//readNumber();
+readNumber();
 
+// #4
 const random = (numRandom1, numRandom2) => {
   let randomInt = Math.random();
   alert(randomInt.toString().split("").slice(-1));
 };
-//random(); //? выдаст рандомно от 1 до 9 (ноль надо доработать)
+random(); //? выдаст рандомно от 1 до 9 (ноль надо доработать)
 
-//! Строки, Теговые шаблоны
+//=======================================================================
+//!===================   Строки, Теговые шаблоны  =======================
+//=======================================================================
+// #1
 const ucFirst = (vasia) => {
   vasia = vasia[0].toUpperCase() + vasia.substring(1);
   return vasia;
 };
 let vasia = `вася`;
-//alert(ucFirst(vasia));
+alert(ucFirst(vasia));
 
+// #2
 const checkSpam = (text_span, filterSpam) => {
   for (let i = 0; i < filterSpam.length; i++) {
     return text_span.includes(filterSpam[i]) ? true : false;
@@ -91,52 +111,237 @@ const checkSpam = (text_span, filterSpam) => {
 const text_span = `продаётся viagra, лицам от 20, каналы Для иНые взрослых XXX, `; //true - найден спан
 const text_span_1 = `продаётся не содержит, лицам от 20, каналы Для  взрослых XX X , `; //false нет спана
 const filterSpam = ["viagra", "XXX", `иНые`, `СлоВа`];
-//alert(checkSpam(text_span, filterSpam));
+alert(checkSpam(text_span, filterSpam));
 
+// #3
 const truncate = (str, maxlength) => {
   console.log(str.length);
   return str.length > 30 ? str.slice(0, 27) + "..." : str;
 };
 const text_spred = `продаётся viagra, лицам от 20, каналы Для иНые взрослых XXX, `;
-//alert(truncate(text_spred, 50));
+alert(truncate(text_spred, 50));
 
+// #4
 const text_sales = `$180`;
 //Вариант 1
 const extractCurrencyValue_1 = (value) => {
   return +value.split("$")[1];
 };
-//alert(extractCurrencyValue_1(text_sales));
-
+alert(extractCurrencyValue_1(text_sales));
 //Вариант 2
 const extractCurrencyValue_2 = (value) => {
   return +value.slice(1);
 };
-//alert(extractCurrencyValue_2(text_sales));
+alert(extractCurrencyValue_2(text_sales));
 
-//! Дата и время
+//=======================================================================
+//!=======================   Дата и время  ==============================
+//=======================================================================
 // #1
-//alert(new Date(2012, 1, 20, 3, 12));
+alert(new Date(2012, 1, 20, 3, 12));
 
 const pnvs = ["ВС", "ПН", "ВТ", "СР", "ЧТ", "ПТ", "СБ"];
-let date_1 = new Date(2012, 0, 3);
+const date_1 = new Date(2012, 0, 3);
+
 // #2
 const getWeekDay = (pnvs, date_1) => {
   return `2012, 0, 3 === ${pnvs[date_1.getDay()]}`;
 };
-console.log(getWeekDay(pnvs, date_1)); //ПТ
+alert(getWeekDay(pnvs, date_1)); // ВТ
 
 // #3
-const getLocalDay = (pnvs, date_1) => {
-  return `2012, 0, 3 === ${pnvs[date_1.getDay()]}`;
+const getLocalDay = (date_1) => {
+  return `2012, 0, 3 = "${
+    date_1.getDay() === 0 ? 7 : date_1.getDay()
+  }-ой" день недели`;
 };
-console.log(getLocalDay(pnvs, date_1)); //понедельник == 1 >>> ПТ
+alert(getLocalDay(date_1)); //2012, 0, 3 = "2-ой" день недели
+
+// #4
+const getDateAgo = (date, days) => {
+  let dateClone = new Date(date);
+  dateClone.setDate(date.getDate() - days);
+  return dateClone.toLocaleDateString();
+};
+const date = new Date(2015, 0, 2);
+let days = 2;
+alert(getDateAgo(date, days)); // 31.12.2014
+days = 1;
+alert(getDateAgo(date, days)); // 01.01.2015
+days = 2;
+alert(getDateAgo(date, days)); // 31.12.2014
+
+// #5
+const getLastDayOfMonth = (year, month) => {
+  const date = new Date(year, month);
+  return new Date(year, month + 1, 0).getDate();
+};
+const year = 2021;
+const month = 10;
+alert(getLastDayOfMonth(year, month)); // 30
+
+// #6 сегодня прошло секунд?
+const date2021 = new Date();
+const years = date2021.getFullYear();
+const day = date2021.getDate();
+const months = date2021.getMonth();
+const hours = date2021.getHours();
+const minutes = date2021.getMinutes();
+const seconds = date2021.getSeconds();
+const getSecondsToday = (hours, minutes, seconds) => {
+  return hours * 3600 + minutes * 60 + seconds;
+};
+alert(getSecondsToday(hours, minutes, seconds)); // прошло секунд за сегодня
+
+// #7 секунд осталось до завтра?
+const getSecondsToTomorrow = (hours, minutes, seconds) => {
+  const hoursAfter = 24 - hours;
+  const minutesAfter = 60 - minutes;
+  const secondsAfter = 60 - seconds;
+  return hoursAfter * 3600 + minutesAfter * 60 + secondsAfter;
+};
+alert(getSecondsToTomorrow(hours, minutes, seconds)); // сек. осталось до завтра
+
+// #8 - еще в процесссе(есть трудности) = Форматирование относительной даты
+const formatDate = (years, months, hours, minutes, seconds, afteTime) => {
+  const dateFormat = Date.now(); //сейчас
+  console.log(dateFormat);
+  console.log("--+");
+  const afterDate = new Date(
+    hours - afteTime,
+    minutes - afteTime,
+    seconds - afteTime
+  ); //было
+  console.log(afterDate);
+  console.log("--");
+};
+const afteTime = 5;
+console.log(formatDate(years, months, hours, minutes, seconds, afteTime)); //
 
 //=======================================================================
-//===================   из wort примеры  ================================
+//!========================   Базовые операторы  ========================
+//=======================================================================
+// #1
+let am = 1;
+let bm = 1;
+console.log(++am); // 2
+console.log(bm++); // 1
+
+// #2
+let x = 1 + (am *= 2);
+console.log(x); // 5
+
+// #3
+console.log("" + 1 + 0); //10
+console.log("" - 1 + 0); // -1
+console.log(true + false); //1;
+console.log(6 / "3"); //2
+console.log("2" * "3"); // 6
+console.log(4 + 5 + "px"); //9px
+console.log("$" + 4 + 5); //$45
+console.log("4" - 2); //2
+console.log("4px" - 2); //NaN
+console.log(7 / 0); //Infinity
+console.log("  -9  " + 5); //  -9  5
+console.log("  -9  " - 5); // -14
+console.log(null + 1); // 1
+console.log(undefined + 1); // NaN
+console.log(" \t \n" - 2); // -2
+
+// #4
+const abNum = () => {
+  let aNum = prompt("Первое число?", 1);
+  let bNum = prompt("Второе число?", 2);
+  alert(+aNum + Number(bNum)); // 3
+};
+abNum();
+
+//=======================================================================
+//!=======================   Таблица приоритетов  =======================
+//=======================================================================
+console.log(3 + 4 * 5); // 23
+console.log(3 > 2 && 2 > 1); //true
+console.log(3 > 2 > 1); //false >> 3 > (2 > 1) - true
+
+//=======================================================================
+//!===================   Логические операторы  ==========================
+//=======================================================================
+// #1
+console.log(null || 2 || undefined); // 2
+console.log(alert(1) || 2 || alert(3)); // 2
+console.log(1 && null && 2); // null
+console.log(alert(1) && alert(2)); // undefined
+console.log(null || (2 && 3) || 4); // 3
+
+// #2
+const anyAge = 90;
+//вариант #1
+const ageInV1 = (anyAge) => {
+  alert(
+    anyAge > 13 && anyAge < 91
+      ? `${anyAge} - в диапазоне`
+      : `${anyAge} - в НЕ диапазона`
+  ); // 90 - в диапазоне  / 93 - в НЕ диапазона
+};
+ageInV1(anyAge);
+
+//вариант #2
+const ageInV2 = (anyAge) => {
+  const res = anyAge > 13 && anyAge < 91; // 90 - true
+  alert(!res ? `${anyAge} - в НЕ диапазона` : `${anyAge} - в диапазоне`);
+};
+ageInV2(anyAge);
+
+if (-1 || 0) alert("first"); //first
+if (-1 && 0) alert("second"); // не выполнится
+if (null || (-1 && 1)) alert("third"); //third
+
+// #3 проверка пароля
+const inputPass = (anyAge) => {
+  let yourLogin = prompt("Введите логин", "");
+  if (yourLogin === "Админ") {
+    let yourPassword = prompt("Введите пароль", "");
+    switch (yourPassword) {
+      case "Я главный":
+        alert("Здравствуйте!");
+        break;
+      case "":
+      case null:
+        alert("Отменено!");
+        break;
+      default:
+        alert("Я вас не знаю");
+        break;
+    }
+  } else if (yourLogin === "" || yourLogin === null) {
+    alert("Отменено");
+  } else {
+    alert("Я вас не знаю");
+  }
+};
+inputPass(anyAge);
+
+//=======================================================================
+//!===================   Операторы сравнения  ===================
+//=======================================================================
+console.log(5 > 4); //true
+console.log("ананас" > "яблоко"); //false
+console.log("2" > "12"); //true
+console.log(undefined == null); // true
+console.log(undefined === null); // false
+console.log(null == "\n0\n"); // false
+console.log(null === +"\n0\n"); // false
+//END
+
+//=======================================================================
+//=======================================================================
+//=======================================================================
+//=======================================================================
+//===================   из word примеры  ================================
 //=======================================================================
 const tabN = (title, result, result2 = ``) => {
-  //console.log(`======== ${title} ========`);
-  //console.log(result + "\n" + result2 + `\n\n\n`); // или alert();
+  console.log(`======== ${title} ========`);
+  console.log(result + "\n" + result2 + `\n\n\n`); // или alert();
 };
 //======================
 
