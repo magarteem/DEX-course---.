@@ -86,12 +86,24 @@ const readNumber = () => {
 };
 readNumber();
 
-// #4 Случайное число от min до max
-const random = (numRandom1, numRandom2) => {
-  let randomInt = Math.random();
-  alert(randomInt.toString().split("").slice(-1));
+// #4 Случайное целое число от min до max(включительно)
+//вариант 1
+const random = (min, max) => {
+  alert(Math.floor(Math.random() * (max - min + 1)) + min);
 };
-random(); //? выдаст рандомно от 1 до 9 (ноль надо доработать)
+random(0, 10);
+
+//вариант 2 без min max
+const random1m = (randomInt) => {
+  alert(+randomInt.toString().slice(2, 3));
+};
+random1m(Math.random());
+
+// #5 Случайное число от min до max(не включая max)
+const random2m = (min, max) => {
+  alert(Math.random() * (max - min)) + min;
+};
+random2m(0, 1);
 
 //=======================================================================
 //!===================   Строки, Теговые шаблоны  =======================
@@ -182,7 +194,7 @@ const year = 2021;
 const month = 10;
 alert(getLastDayOfMonth(year, month)); // 30
 
-// #6 сегодня прошло секунд?
+// #6 сколько сегодня прошло секунд?
 const date2021 = new Date();
 const years = date2021.getFullYear();
 const day = date2021.getDate();
@@ -195,7 +207,7 @@ const getSecondsToday = (hours, minutes, seconds) => {
 };
 alert(getSecondsToday(hours, minutes, seconds)); // прошло секунд за сегодня
 
-// #7 секунд осталось до завтра?
+// #7 сколько секунд осталось до завтра?
 const getSecondsToTomorrow = (hours, minutes, seconds) => {
   const hoursAfter = 24 - hours;
   const minutesAfter = 60 - minutes;
@@ -204,21 +216,19 @@ const getSecondsToTomorrow = (hours, minutes, seconds) => {
 };
 alert(getSecondsToTomorrow(hours, minutes, seconds)); // сек. осталось до завтра
 
-// #8 Форматирование относительной даты - еще в процесссе(есть трудности) = Форматирование относительной даты
-const formatDate = (years, months, hours, minutes, seconds, afteTime) => {
-  const dateFormat = Date.now(); //сейчас
-  console.log(dateFormat);
-  console.log("--+");
-  const afterDate = new Date(
-    hours - afteTime,
-    minutes - afteTime,
-    seconds - afteTime
-  ); //было
-  console.log(afterDate);
-  console.log("--");
-};
-const afteTime = 5;
-console.log(formatDate(years, months, hours, minutes, seconds, afteTime)); //
+// #8 Форматирование относительной даты
+let dateAfter11 = new Date(2021, 10, 08, 4, 54, 00); // установленная дата
+let dateNow = Date.now(); // текущая дата
+const differenceSec = (dateNow - +dateAfter11) / 1000; // разница
+if (differenceSec < 1) {
+  console.log("прямо сейчас");
+} else if (differenceSec / 60 < 1) {
+  console.log(`${Math.floor(differenceSec)} сек. назад`);
+} else if (differenceSec / 60 / 60 < 1) {
+  console.log(`${Math.floor(differenceSec / 60)} мин. назад`);
+} else {
+  console.log(dateAfter11.toLocaleString());
+}
 
 //=======================================================================
 //!========================   Базовые операторы  ========================
