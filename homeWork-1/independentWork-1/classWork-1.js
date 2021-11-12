@@ -1,6 +1,31 @@
-//! сделать
+// https://codesandbox.io/s/boring-christian-4qnpf?file=/src/workHere.js
 
-//С сервера приходят данные о каждом пользователе, а именно: имя/фамилия, дата рождения и зп. Вы должны написать функцию, которая:
-//Сравнивает сегодняшнюю дату с датой рождения сотрудника
-//Если дата совпадает, выводить ее начальнику по типу “У Василия Иванова сегодня праздник, его премия составляет {...}”
-//Начальство придумало следующий алгоритм подсчета премий: к 10% от зп сотрудника прибавляется выражение (день умножить на месяц). В большинстве случаев получаются некрасивые цифры типа 213, 157 итд. Нужно сделать суммы круглыми - 220, 160 итд. Воспроизведите этот алгоритм.
+export const dataProcessingAboutSalary = (f, s) => {};
+
+export const calculateCashback = (isCashback, sum, cb) => {};
+
+export const getHolidaysNotifications = (f, s) => {};
+
+export const getHolidayPrizes = (f, s, t) => {
+  const newDateStr = new Date(Date.now());
+  const nowMount = newDateStr.getMonth(); // текущий мес
+  const nowDate = newDateStr.getDate(); // число сегодня
+
+  const dateAny = new Date(s);
+  const birthDataMount = dateAny.getMonth(); //= месяц рождения сотрудника"
+  const birthDataDate = dateAny.getDate(); // = число ррождения сотрудника"
+
+  const fu = (zps) => {
+    let zp = t / 10 + (birthDataMount + 1) * birthDataDate; // месяц + 1 т.к. с нуля счёт
+
+    // округление в большую сумму
+    while (zp % 10 !== 0) {
+      zp++;
+    }
+
+    const dr = `У ${f} сегодня праздник, его премия от текущей ЗП = ${t} составляет ${zp} р.`;
+    return dr;
+  };
+
+  return nowMount == birthDataMount && nowDate == birthDataDate ? fu() : null;
+};
