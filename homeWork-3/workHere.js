@@ -1,7 +1,6 @@
 export const processCartData = (cartData) => {
   //TODO: Нужно добавить поле discount(oldPrice - price)
   // убрать поле oldPrice
-  //let discount =
   cartData.map((e) => {
     if (e.oldPrice - e.price >= 0) {
       return {
@@ -12,38 +11,29 @@ export const processCartData = (cartData) => {
     }
     return {
       ...e,
-      ...delete e?.oldPrice,
+      ...delete e.oldPrice,
     };
   });
   return cartData;
-  //return discount;
 };
 
 export const makeCartItemCopy = (cartItem) => {
   //TODO: сделать копию элемента "Пицца с анчоусами"
   // После увеличить кол-во добавленного ингредиента
-  const newElem = cartItem.find((x) => x.id === "0");
-
-  console.log(newElem);
-  console.log(cartItem);
-  return cartItem;
+  const cartItemFind = cartItem.find((el) => el.id === "0");
+  const cartItemCopyElem = {
+    ...cartItemFind,
+    addedIngredients: [
+      ...cartItemFind.addedIngredients.map((x) => {
+        return {
+          ...x,
+          count: x.count + 1,
+        };
+      }),
+    ],
+  };
+  return cartItemCopyElem;
 };
-
-//export const makeCartItemCopy = (cartItem) => {
-//  //TODO: сделать копию элемента "Пицца с анчоусами"
-//  // После увеличить кол-во добавленного ингредиента
-//  const newElem = cartItem.find((x) => x.id === "0");
-//  const newIngr = {
-//    ...newElem,
-//    addedIngredients: [
-//      {
-//        ...newElem.addedIngredients[0],
-//        count: newElem.addedIngredients[0].count + 1,
-//      },
-//    ],
-//  };
-//  return newIngr;
-//};
 
 export const calcSum = (cartData) => {
   //TODO: посчитать суммы по типам товаров и их цены
@@ -53,11 +43,14 @@ export const calcSum = (cartData) => {
     pizza: { count: 0, sum: 0 },
     other: { count: 0, sum: 0 },
   };
+
   cartData.forEach((e) => {
     for (const key in showCountPrice) {
       if (key === e.type) {
         showCountPrice[key].count++;
         showCountPrice[key].sum += e.price;
+        showCountPrice["total"].count += 1;
+        showCountPrice["total"].sum += e.price;
       }
     }
   });
@@ -83,7 +76,7 @@ export const repeatOrder = (cartData, date) => {
   // дату текущую
   // поменять id на уникальный
 
-  const getDate = new Date(date).toLocaleDateString(); // пришло
+  const getDate = new Date(date).toLocaleDateString(); // пришло date = "2021-10-28T20:55:15.220Z"
   cartData.map((el) => {
     cartData = [...cartData];
     if (new Date(el.date).toLocaleDateString() === getDate) {
