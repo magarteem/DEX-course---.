@@ -14,6 +14,7 @@ export const processCartData = (cartData) => {
       ...delete e.oldPrice,
     };
   });
+  //console.log(cartData);
   return cartData;
 };
 
@@ -45,15 +46,23 @@ export const calcSum = (cartData) => {
   };
 
   cartData.forEach((e) => {
+    //console.log(e.type);
     for (const key in showCountPrice) {
       if (key === e.type) {
-        showCountPrice[key].count++;
-        showCountPrice[key].sum += e.price;
+        //console.log("1");
+        //console.log(showCountPrice[key]);
+        //console.log(key);
+        //console.log(e.count);
+        showCountPrice[key].count += e.count;
+        showCountPrice[key].sum += e.price * e.count;
         showCountPrice["total"].count += 1;
         showCountPrice["total"].sum += e.price;
       }
     }
   });
+
+  //console.log(cartData);
+  //console.log(showCountPrice);
   return showCountPrice;
 };
 
@@ -75,22 +84,20 @@ export const repeatOrder = (cartData, date) => {
   // поставить в начало спиcка
   // дату текущую
   // поменять id на уникальный
-
   const getDate = new Date(date).toLocaleDateString(); // пришло date = "2021-10-28T20:55:15.220Z"
+  let newArr = []; // плохой вариант
   cartData.map((el) => {
-    cartData = [...cartData];
     if (new Date(el.date).toLocaleDateString() === getDate) {
-      return [
-        ...cartData,
-        cartData.unshift({
-          ...el,
-          id: cartData.length,
-          date: new Date(Date.now()),
-        }),
-      ];
+      newArr.unshift({
+        ...el,
+        id: newArr.length + 2,
+        date: new Date(Date.now()),
+      });
     }
+    newArr.push(el);
   });
-  return cartData;
+  cartData = [...newArr];
+  return newArr;
 };
 
 export const addItem = (cartData, item) => {
