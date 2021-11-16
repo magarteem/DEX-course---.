@@ -14,7 +14,6 @@ export const processCartData = (cartData) => {
       ...delete e.oldPrice,
     };
   });
-  //console.log(cartData);
   return cartData;
 };
 
@@ -44,25 +43,16 @@ export const calcSum = (cartData) => {
     pizza: { count: 0, sum: 0 },
     other: { count: 0, sum: 0 },
   };
-
   cartData.forEach((e) => {
-    //console.log(e.type);
     for (const key in showCountPrice) {
       if (key === e.type) {
-        //console.log("1");
-        //console.log(showCountPrice[key]);
-        //console.log(key);
-        //console.log(e.count);
         showCountPrice[key].count += e.count;
         showCountPrice[key].sum += e.price * e.count;
-        showCountPrice["total"].count += 1;
-        showCountPrice["total"].sum += e.price;
+        showCountPrice["total"].count += e.count;
+        showCountPrice["total"].sum += e.price * e.count;
       }
     }
   });
-
-  //console.log(cartData);
-  //console.log(showCountPrice);
   return showCountPrice;
 };
 
@@ -90,7 +80,7 @@ export const repeatOrder = (cartData, date) => {
     if (new Date(el.date).toLocaleDateString() === getDate) {
       newArr.unshift({
         ...el,
-        id: newArr.length + 2,
+        id: newArr.length + 2, // ???
         date: new Date(Date.now()),
       });
     }
