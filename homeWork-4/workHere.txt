@@ -37,39 +37,29 @@ export const logger = (nameFu) => {
 // Должна работать для любого кол-ва аргументов
 
 // эту пока не удалось решить
-
-export const curry = (f) => {
-  //console.log(f);
-  function funcСurryingCount(sum) {
-    return function curried(...args) {
-      return (...args2) =>
-        function () {
-          curried(...args, ...args2);
-        };
-    };
-  }
-
-  let funcCurrent = funcСurryingCount(f);
-  return funcCurrent(1)(3)(4);
+export const curry = (functions) => {
+  return function fuArgs(...args) {
+    if (args.length >= functions.length) {
+      return functions.apply(this, args);
+    } else {
+      return function (...args2) {
+        return fuArgs(...args, ...args2);
+      };
+    }
+  };
 };
 
-//=========================
-
-//export const counter = (a, b) => {
-//  //
-//  function cc() {
-//    return function () {
-//      let r = 1;
-//      let y = () => {
-//        console.log("3333");
+//export const curry = (func) => {
+//  return function fu(...args) {
+//    console.log(args);
+//    if (args.length >= func.length) {
+//      console.log("----------");
+//      console.log(args.length);
+//      return func;
+//    } else {
+//      return (...args2) => {
+//        return fu(...args, ...args2);
 //      };
-//      return function (b) {
-//        console.log(++r);
-//        y();
-//        return b;
-//      };
-//    };
-//  }
-//  let mm = cc();
-//  return mm(b);
+//    }
+//  };
 //};
