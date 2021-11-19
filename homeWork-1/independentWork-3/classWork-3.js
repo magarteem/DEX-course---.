@@ -45,12 +45,9 @@ function sum(a, b, c) {
   return a + b + c;
 }
 let funcСurryingArgs = curry(sum);
-console.log("-------------");
-console.log("funcСurryingArgs(1,3,4) ", funcСurryingArgs(1, 3, 4, 5));
-console.log("-------------");
-//console.log("funcСurryingArgs(1,3)(4) ", funcСurryingArgs(1, 3)(4));
-//console.log("funcСurryingArgs(1)(3,4) ", funcСurryingArgs(1)(3, 4));
-//console.log("funcСurryingArgs(1)(3)(4) ", funcСurryingArgs(1)(3)(4));
+console.log("funcСurryingArgs(1,3)(4) ", funcСurryingArgs(1, 3)(4));
+console.log("funcСurryingArgs(1)(3,4) ", funcСurryingArgs(1)(3, 4));
+console.log("funcСurryingArgs(1)(3)(4) ", funcСurryingArgs(1)(3)(4));
 
 // Создать функцию обёртку
 // которая будет принимать количество аргументов
