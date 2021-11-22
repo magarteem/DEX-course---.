@@ -96,24 +96,40 @@ getUsers("GET, requestURl1").then((data) => console.log(data));
 //======================================================
 
 //?           classWork-4
-async function postUsers(postURl, postData) {
-  const post = await fetch(postURl, postData);
-  //const jsonData = await post.json();
-  //console.log(jsonData);
+const postURl = "https://610f44b39b698d00171752e4.mockapi.io/favorit";
+async function postUsers(postURl) {
+  await fetch(postURl)
+    .then((res) => res.json())
+    .then((data) => {
+      console.log("получено");
+      console.log(data);
+      const last_2 = _.takeRight(data, 1); // lodash с CDN, последний
+      console.log("post последнего");
+      console.log(last_2);
+      return last_2;
+    })
+    .then((resultLast_2) => {
+      console.log(resultLast_2[0]);
+      console.log("POST последнего");
+      const postData = {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(resultLast_2[0]),
+      };
+      fetch(postURl, postData);
+    })
+    .then(() => {
+      setTimeout(() => {
+        fetch(postURl)
+          .then((res) => res.json())
+          .then((data) => {
+            console.log("получено + 1");
+            console.log(data);
+          });
+      }, 1000);
+    });
 }
 
-const postURl = "https://jsonplaceholder.typicode.com/users";
-const postData = {
-  method: "POST",
-  headers: {
-    "Content-Type": "application/json",
-  },
-  body: JSON.stringify({
-    server: "aws",
-    port: 8080,
-    status: "working",
-    modified: false,
-  }),
-};
-
-postUsers(postURl, postData);
+postUsers(postURl);
