@@ -6,9 +6,15 @@ const to = 6;
 
 const printNumbers = (from, to) => {
   const setInt = setInterval(() => {
-    from != to + 1 ? console.log(from) : clearInterval(setInt);
+    //from != to + 1 ? console.log(from) : clearInterval(setInt);
     from++;
   }, 1000);
+  const setInt1 = setInterval(() => {
+    //from != to + 1 ? console.log(from) : clearInterval(setInt);
+    from++;
+  }, 1000);
+  console.log(setInt);
+  console.log(setInt1);
 };
 printNumbers(from, to);
 
