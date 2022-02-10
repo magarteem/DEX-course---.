@@ -369,17 +369,74 @@
 
 /*! Team card  CSS */
 .cardTeam {
-  background-color: rgb(123, 255, 0);
   flex: 0 1 var(--width-card);
 }
-.cardTeam title {
+.teamTitle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   height: var(--height-card-title);
   color: var(--red);
-}
-.teamInfo {
-  background: linear-gradient(276.45deg, #707070 0%, #393939 100.28%);
+  border: 0.5px solid var(--light-grey);
   border-radius: 10px 10px 0px 0px;
-  transform: rotate(-180deg);
-  height: 404px;
+  padding: 0 32px;
 }
+.teamTitle span {
+  color: var(--red);
+  font-size: 14px;
+}
+.teamTitle__text {
+  color: var(--light-grey) !important;
+}
+.iconEdit {
+  display: flex;
+  align-items: center;
+}
+.iconEdit img:nth-child(1) {
+  margin-right: 16px;
+}
+
+.teamInfo {
+  background: linear-gradient(95deg, #707070 0%, #393939 100.28%);
+  border-radius: 0px 0px 10px 10px;
+  height: 404px;
+  padding: 65px 146px;
+  display: flex;
+  align-items: center;
+}
+
+.teamLogo {
+  flex: 0 1 40%;
+}
+.teamText {
+  height: 100%;
+  flex: 0 1 60%;
+  color: var(--white-color);
+}
+.teamText h1 {
+  font-size: 36px;
+  font-weight: 800;
+}
+.teamText h4 {
+  font-size: 24px;
+  font-weight: 800;
+}
+.teamText span {
+  font-size: 18px;
+}
+.left50 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 0 1 50%;
+  flex-wrap: wrap;
+  height: 100%;
+  margin-top: 40px;
+  padding-bottom: 65px;
+}
+.rig50 {
+  flex: 0 1 50%;
+  background-color: #812020;
+}
+
 /*! Playet card  CSS */
