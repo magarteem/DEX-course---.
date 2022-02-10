@@ -1,0 +1,385 @@
+:root {
+  --white-color: #fff;
+  --dark-grey: #303030;
+  --grey: #707070;
+  --light-grey: #9c9c9c;
+  --lightest-grey: #d1d1d1;
+  --lightest-grey1: #f6f6f6;
+  --darkred: #c60e2e;
+  --red: #e4163a;
+  --light-red: #ff5761;
+  --lightest-red: #ff768e;
+  --blue: #344472;
+
+  --width: 365px;
+  --height: 40px;
+  --bor-radius: 4px;
+  --transition: all 0.3s;
+
+  --width-card: 1140px;
+  --height-card-title: 70px;
+}
+
+/*? input  */
+.inp {
+  font-weight: 500;
+  font-size: 14px;
+  flex: 0 1 var(--width);
+  color: var(--grey);
+}
+.inp .title {
+  font-size: 14px;
+}
+.inp .error {
+  font-size: 12px;
+  line-height: 18px;
+  color: var(--lightest-red);
+}
+.inp input {
+  width: 100%;
+  margin-top: 8px;
+  padding: 0 12px;
+  font-weight: 500;
+  font-size: 14px;
+  background-color: var(--lightest-grey1);
+  color: var(--dark-grey);
+  height: var(--height);
+  border-radius: var(--bor-radius);
+  transition: all 0.3s;
+}
+.inp input:hover {
+  background-color: var(--lightest-grey);
+}
+.inp input:focus {
+  background-color: var(--lightest-grey1);
+  box-shadow: 0px 0px 5px #d9d9d9;
+}
+.inp input:disabled {
+  background-color: var(--lightest-grey1);
+  color: var(--lightest-grey);
+}
+.inpErrorValidation {
+  border: 1px solid var(--lightest-red);
+}
+
+/*? button  */
+.btn {
+  flex: 0 1 var(--width);
+  height: var(--height);
+  background-color: var(--red);
+  border-radius: var(--bor-radius);
+  color: #fff;
+  font-size: 15px;
+  transition: all 0.2s;
+  min-width: 145px;
+}
+.btnAdd {
+  margin-left: 20px;
+  --width: 104px;
+  flex: 0 1 var(--width);
+  height: var(--height);
+  background-color: var(--red);
+  border-radius: var(--bor-radius);
+  color: #fff;
+  font-size: 15px;
+  transition: all 0.2s;
+  min-width: 80px;
+}
+
+.btn:hover,
+.btnAdd:hover {
+  background-color: var(--light-red);
+}
+.btn:active,
+.btnAdd:active {
+  background-color: var(--darkred);
+}
+.btn:disabled,
+.btnAdd:disabled {
+  background-color: var(--lightest-grey1);
+  color: var(--lightest-grey);
+}
+
+.btnCancel {
+  margin-left: 20px;
+  --width: 170px;
+  flex: 0 1 var(--width);
+  height: var(--height);
+  background-color: #fff;
+  border-radius: var(--bor-radius);
+  color: var(--light-grey);
+  font-size: 15px;
+  transition: all 0.2s;
+  min-width: 80px;
+  border: 1px solid var(--light-grey);
+}
+.btnCancel:hover {
+  background-color: var(--lightest-grey);
+}
+.btnCancel:active {
+  background-color: var(--light-grey);
+  color: var(--grey);
+}
+.btnCancel:disabled {
+  background-color: var(--lightest-grey1);
+  color: var(--lightest-grey);
+}
+
+/*? search  */
+.searchInput {
+  position: relative;
+  height: var(--height);
+  flex: 0 1 var(--width);
+  transition: var(--transition);
+  min-width: 120px;
+}
+.searchInput input {
+  border: 1px solid var(--lightest-grey);
+  height: 100%;
+  width: 100%;
+  padding: 0 25px 0 12px;
+  color: var(--grey);
+  border-radius: var(--bor-radius);
+}
+.searchInput input::placeholder {
+  color: var(--grey);
+}
+.searchInput input:focus {
+  box-shadow: 0px 0px 5px #d9d9d9;
+}
+.searchInput input:focus::placeholder {
+  color: transparent;
+}
+.searchInput svg {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/*? notification  */
+.notification {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  --width: 470px;
+  flex: 0 1 var(--width);
+  height: var(--height);
+  background-color: var(--light-red);
+  border-radius: var(--bor-radius);
+  color: #fff;
+  font-size: 16px;
+  padding: 0 5px;
+}
+
+/*? checkbox  */
+.checkBlock {
+  position: relative;
+  --width: 195px;
+  --height: 24px;
+  display: flex;
+  flex-direction: column;
+  height: var(--height);
+  flex: 0 1 var(--width);
+}
+.flexCheck {
+  display: flex;
+  align-items: center;
+}
+.flexCheck span {
+  font-size: 14px;
+  margin-left: 10px;
+}
+.flexCheck input {
+  display: none;
+}
+.checkbox {
+  --bor-radius: 2px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  width: 12px;
+  height: 12px;
+  border: 1px solid var(--light-grey);
+  border-radius: var(--bor-radius);
+  transition: all 0.2s;
+}
+.checkbox svg {
+  position: absolute;
+  display: none;
+}
+.checkbox span {
+  margin-left: 50px;
+}
+
+.flexCheck input:checked ~ label svg {
+  display: block;
+}
+.flexCheck input:hover ~ label {
+  border: 1px solid var(--red);
+}
+.flexCheck input:disabled ~ label {
+  border: 1px solid var(--lightest-grey);
+  background-color: var(--lightest-grey1);
+}
+.flexCheck input:checked:disabled ~ label {
+  border: 1px solid var(--lightest-grey);
+  background-color: var(--lightest-grey);
+}
+.flexCheck input:checked ~ label {
+  background-color: var(--red);
+  border: 1px solid var(--red);
+}
+/* error */
+.checkError {
+  top: 15px;
+  font-size: 12px;
+  position: absolute;
+  color: var(--lightest-red);
+}
+.errorCheckbox label {
+  border: 1px solid var(--lightest-red);
+}
+.errorCheckbox span {
+  color: var(--lightest-red);
+}
+
+/*? link  */
+.link {
+  color: var(--red);
+  text-decoration: underline;
+  font-size: 14px;
+}
+.disableLink {
+  pointer-events: none;
+  cursor: default;
+}
+.link.disableLink {
+  color: var(--lightest-grey);
+}
+
+/*? header  */
+.header {
+  display: flex;
+  width: 100%;
+  max-width: 1440px;
+}
+.contentHeader {
+  --bor-radius: 10px;
+  --height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: 0 1 1440px;
+  height: var(--height);
+  box-shadow: 0px 1px 10px rgba(209, 209, 209, 0.5);
+  border-radius: var(--bor-radius);
+}
+
+/******** burger */
+.burger375px {
+  position: relative;
+  height: 24px;
+  width: 24px;
+  display: none;
+  margin-left: 20px;
+  cursor: pointer;
+}
+.spanBurger,
+.spanBurger::before,
+.spanBurger::after {
+  position: absolute;
+  display: block;
+  border-radius: 2px;
+  height: 2px;
+  width: 18px;
+  top: 0;
+  left: 0;
+  background-color: var(--lightest-grey);
+  transition: 0.4s;
+}
+.spanBurger::before {
+  content: "";
+  top: -5px;
+}
+.spanBurger::after {
+  content: "";
+  top: 5px;
+}
+
+.burger375px:hover .spanBurger {
+  background-color: transparent;
+}
+.burger375px:hover .spanBurger::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+.burger375px:hover .spanBurger::after {
+  top: 0;
+  transform: rotate(-45deg);
+}
+/*  */
+
+.logo {
+  margin-left: 60px;
+}
+.infoUser {
+  display: flex;
+  align-items: center;
+  margin-right: 60px;
+}
+.infoUser img {
+  margin-left: 16px;
+}
+
+/* media header */
+/*! 767px */
+@media (max-width: 767px) {
+  .logo {
+    margin-left: 20px;
+  }
+  .infoUser {
+    margin-right: 20px;
+  }
+}
+/*! 575px */
+@media (max-width: 575px) {
+  .logo {
+    margin-right: 20px;
+  }
+  .infoUser {
+    display: none;
+  }
+
+  .burger375px {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .spanBurger {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+/*************************************/
+
+/*! Team card  CSS */
+.cardTeam {
+  background-color: rgb(123, 255, 0);
+  flex: 0 1 var(--width-card);
+}
+.cardTeam title {
+  height: var(--height-card-title);
+  color: var(--red);
+}
+.teamInfo {
+  background: linear-gradient(276.45deg, #707070 0%, #393939 100.28%);
+  border-radius: 10px 10px 0px 0px;
+  transform: rotate(-180deg);
+  height: 404px;
+}
+/*! Playet card  CSS */
