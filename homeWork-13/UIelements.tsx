@@ -1,3 +1,7 @@
+//******************************************
+//  Наглядный пример ==  https://home-work.jsx.su/
+//******************************************
+
 import { Link } from "react-router-dom";
 import s from "./uielements.module.css";
 import logo from "../../assets/icons/logo.webp";
