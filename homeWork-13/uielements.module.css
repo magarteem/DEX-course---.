@@ -535,11 +535,11 @@
   align-items: flex-end;
 }
 .playerLogo {
-  flex: 0 1 40%;
+  flex: 0 1 55%;
 }
 .playerText {
   height: 100%;
-  flex: 0 1 60%;
+  flex: 0 1 45%;
   color: var(--white-color);
 }
 .playerTitle__text {
@@ -563,7 +563,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  flex: 0 1 65%;
+  flex: 0 1 50%;
   flex-wrap: wrap;
   /*padding-bottom: 30px;*/
 }
@@ -576,7 +576,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  flex: 0 1 35%;
+  flex: 0 1 50%;
 }
 .emptyBlock {
   height: 50px;
