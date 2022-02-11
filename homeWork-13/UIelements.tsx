@@ -135,33 +135,87 @@ export const UIelements = () => {
             </div>
             <div className={s.teamText}>
               <h1>Denver Nuggets</h1>
-              {/*<div>*/}
-              <div className={s.left50}>
-                <div>
-                  <h4>Year of foundation</h4>
-                  <span>1976</span>
+              <div className={s.__flexText}>
+                <div className={s.left50}>
+                  <div>
+                    <h4>Year of foundation</h4>
+                    <span>1976</span>
+                  </div>
+                  <div>
+                    <h4>Conference</h4>
+                    <span>Western</span>
+                  </div>
                 </div>
-
-                <div>
-                  <h4>Conference</h4>
-                  <span>Western</span>
-                </div>
-
-                <div>
-                  <h4>Division</h4>
-                  <span>Northwestern</span>
+                <div className={s.rig50}>
+                  <div>
+                    <h4>Division</h4>
+                    <span>Northwestern</span>
+                  </div>
                 </div>
               </div>
-              {/*<div className={s.rig50}>
-                  
-                </div>*/}
-              {/*</div>*/}
             </div>
           </div>
         </div>
       </section>
 
-      {/* //! Team card  ************************************************* */}
+      {/* //! Player card  ************************************************* */}
+
+      <section>
+        <h2>Player Team</h2>
+
+        <div className={s.cardTeam}>
+          <div className={s.teamTitle}>
+            <span>
+              Players <span className={s.teamTitle__text}>/</span> Greg
+              Whittington
+            </span>
+            <div className={s.iconEdit}>
+              <img src={pencil} alt="edit" />
+              <img src={deleteImg} alt="delete" />
+            </div>
+          </div>
+
+          <div className={s.playerInfo}>
+            <div className={s.playerLogo}>
+              <img src={playerPhoto} alt="playerPhoto" />
+            </div>
+            <div className={s.playerText}>
+              <h1>
+                Greg Whittington
+                <b className={s.playerTitle__text}> #22</b>
+              </h1>
+              <div className={s.__playerFlexText}>
+                <div className={s.playerLeft50}>
+                  <div>
+                    <h4>Position</h4>
+                    <span>Forward</span>
+                  </div>
+                  <div>
+                    <h4>Height</h4>
+                    <span>206 cm</span>
+                  </div>
+                  <div>
+                    <h4>Age</h4>
+                    <span>27</span>
+                  </div>
+                </div>
+                <div className={s.playerRig50}>
+                  <div>
+                    <h4>Team</h4>
+                    <span>Denver Nuggets</span>
+                  </div>
+                  <div>
+                    <h4>Weight</h4>
+                    <span>95 kg</span>
+                  </div>
+                  <div className={s.emptyBlock}></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      {/*  */}
     </div>
   );
 };
