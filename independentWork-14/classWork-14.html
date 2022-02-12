@@ -1,0 +1,116 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+.Block {
+  height: 30px;
+  margin-bottom: 5px;
+  }
+form {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+
+input:required{
+  border:3px solid rgb(112, 31, 31) 
+}
+input:not(required) {
+  border:3px dotted rgb(197, 29, 29) 
+}  
+:nth-child(2) input:nth-of-type(4){
+  border:3px solid rgb(80, 211, 4) 
+}
+:nth-child(3) input:nth-of-type(2):valid{
+  border:3px solid rgb(80, 211, 4) 
+}
+
+  input[type="text"]{
+    border:3px dotted rgb(197, 29, 29) 
+  }
+  
+  input[type="text"]{
+    border:3px dotted rgb(197, 29, 29) 
+  }
+}
+
+label {
+  font-weight: bold;
+  margin-top: 15px;
+}
+input {
+  max-width: 300px;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 5px;
+}
+
+fieldset {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+input[type="checkbox"]:checked ~ div:nth-child(even){
+  border:1px solid chartreuse;
+}
+input[type="checkbox"]:checked ~ div:nth-child(odd){
+  border:1px solid blue;
+}
+input[type="checkbox"]:checked ~ div:last-child{
+  border:1px solid rgb(248, 0, 0);
+}
+input[type="checkbox"]:checked + div:nth-child(3){
+  border:1px solid black 
+}
+
+
+// ClassWork 14
+// BackFon
+.re{
+  width:100vw;
+  height:100vh;  
+  background:
+  url(slp2.png)  no-repeat 300px 350px,
+  url(spl3.png)  no-repeat 800px 380px,
+  url(slp4.png)  no-repeat 555px 350px,
+  url(smok.png)  no-repeat 350px 580px,
+  url(cow.png)  no-repeat 140px 400px,
+  url(cow.png)  no-repeat 400px 400px,
+  url(cow.png)  no-repeat 650px 400px,
+  url(fon.jpg)   no-repeat ;
+  background-size: 120px,  120px, 120px , 60px, 300px,  300px,300px, auto;}
+  
+  // TransitionComponent 
+input[type="checkbox"] ~ div{
+  width: 100px;
+  height: 50px;
+  margin:  5px;
+  border:1px solid chartreuse;
+  transition: all .3s;
+  transform: translate(0);
+}
+
+input[type="checkbox"] ~ div:nth-child(2){
+  background-color: rgb(3, 255, 200);
+  transition-delay: .4s;
+}
+input[type="checkbox"] ~ div:nth-child(3){
+  background-color: rgb(223, 11, 134);
+  transition-delay: .6s;  
+}
+input[type="checkbox"] ~ div:nth-child(4){
+  background-color: rgb(255, 83, 3);
+  transition-delay: .8s;
+}
+input[type="checkbox"] ~ div:nth-last-child(2){
+  background-color: rgb(0, 0, 0);
+  transition-delay: 1s;
+}
+
+input[type="checkbox"]:checked ~ div{ 
+  transform: translate(500px);
+}
