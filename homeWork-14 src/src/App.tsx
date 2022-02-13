@@ -1,10 +1,11 @@
-import { UIelements } from "./pages/components/UIelements";
-import "./styles/App.css";
+import { Routers } from "./modules/Routers";
 
 function App() {
   return (
-    <div className="App">
-      <UIelements />
+    <div className="wrap">
+      <div className="container">
+        <Routers />
+      </div>
     </div>
   );
 }

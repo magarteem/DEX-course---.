@@ -1,0 +1,63 @@
+@import "../../../styles/variable.scss";
+
+.btn {
+  flex: 0 1 $width;
+  height: $height;
+  background-color: $red;
+  border-radius: $bor-radius;
+  color: #fff;
+  font-size: 15px;
+  transition: all 0.2s;
+  min-width: 145px;
+}
+.btnAdd {
+  margin-left: 20px;
+  --width: 104px;
+  flex: 0 1 $width;
+  height: $height;
+  background-color: $red;
+  border-radius: $bor-radius;
+  color: #fff;
+  font-size: 15px;
+  transition: all 0.2s;
+  min-width: 80px;
+}
+
+.btn:hover,
+.btnAdd:hover {
+  background-color: $light-red;
+}
+.btn:active,
+.btnAdd:active {
+  background-color: $darkred;
+}
+.btn:disabled,
+.btnAdd:disabled {
+  background-color: $lightest-grey1;
+  color: $lightest-grey;
+}
+
+.btnCancel {
+  margin-left: 20px;
+  --width: 170px;
+  flex: 0 1 $width;
+  height: $height;
+  background-color: #fff;
+  border-radius: $bor-radius;
+  color: $light-grey;
+  font-size: 15px;
+  transition: all 0.2s;
+  min-width: 80px;
+  border: 1px solid $light-grey;
+}
+.btnCancel:hover {
+  background-color: $lightest-grey;
+}
+.btnCancel:active {
+  background-color: $light-grey;
+  color: $grey;
+}
+.btnCancel:disabled {
+  background-color: $lightest-grey1;
+  color: $lightest-grey;
+}
