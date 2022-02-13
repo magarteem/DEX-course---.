@@ -13,30 +13,13 @@ export const SignUpForm = () => {
 
   return (
     <div className={s.formAuth}>
-      <h1>Sign Up</h1>
+      <h1>Sign In</h1>
       <form>
         <div className={s.paddingInp}>
-          <Input type="text" inputLabel="Name" />
+          <Input type="number" />
         </div>
         <div className={s.paddingInp}>
-          <Input type="text" inputLabel="Login" />
-        </div>
-
-        <div className={s.paddingInp}>
-          <Input
-            type="password"
-            pass={pass}
-            setPassFu={setPassFu}
-            inputLabel="Password"
-          />
-        </div>
-        <div className={s.paddingInp}>
-          <Input
-            type="password"
-            pass={pass}
-            setPassFu={setPassFu}
-            inputLabel="Enter your password again"
-          />
+          <Input type="password" pass={pass} setPassFu={setPassFu} />
         </div>
         <SignInButton />
         <div className={s.memberPass}>
