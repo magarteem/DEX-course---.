@@ -6,8 +6,7 @@ interface PropsButton {
   isValid?: boolean;
 }
 
-export const InButton = ({ textButton, isValid }: PropsButton) => {
-  console.log(isValid);
+export const InButton = ({ textButton, isValid = true }: PropsButton) => {
   return (
     <div style={{ display: "flex" }}>
       <button disabled={!isValid} className={s.btn}>

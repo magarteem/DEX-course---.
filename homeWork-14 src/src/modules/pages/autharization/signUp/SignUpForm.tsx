@@ -6,7 +6,7 @@ import signUp from "../../../../assets/images/signUp.png";
 import { InButton } from "../../../../common/components/button/InButton";
 import { useForm } from "react-hook-form";
 import { Input } from "../../../../common/components/input/Input";
-import { Сheckbox1 } from "../../../../common/components/checkbox/Сheckbox";
+import { Сheckbox } from "../../../../common/components/checkbox/Сheckbox";
 import { useNavigate } from "react-router-dom";
 
 export const SignUpForm = () => {
@@ -21,7 +21,7 @@ export const SignUpForm = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors, isValid },
+    formState: { errors },
   } = useForm({ mode: "onBlur" });
 
   const onSubmit = (data: any) => {
@@ -84,7 +84,7 @@ export const SignUpForm = () => {
               </Input>
             </div>
 
-            <Сheckbox1
+            <Сheckbox
               textСheckbox="I accept the agreement"
               htmlForId="ce"
               errors={errors.checkbox && errors.checkbox}
@@ -94,12 +94,12 @@ export const SignUpForm = () => {
                 type="checkbox"
                 disabled={false}
                 {...register("checkbox", {
-                  //required: "You must be accept the agreement.",
+                  required: "You must be accept the agreement.",
                 })}
               />
-            </Сheckbox1>
+            </Сheckbox>
 
-            <InButton textButton="Sign UP" isValid={isValid} />
+            <InButton textButton="Sign UP" />
             <div className={s.memberPass}>
               <span>
                 Already a member? &ensp;

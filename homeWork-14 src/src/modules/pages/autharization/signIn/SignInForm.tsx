@@ -20,7 +20,7 @@ export const SignInForm = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors, isValid },
+    formState: { errors },
   } = useForm({ mode: "onBlur" });
 
   const onSubmit = (data: any) => {
@@ -62,7 +62,7 @@ export const SignInForm = () => {
               </Input>
             </div>
 
-            <InButton textButton="Sign In" isValid={isValid} />
+            <InButton textButton="Sign In" />
             <div className={s.memberPass}>
               <span>
                 Not a member yet?&ensp;
