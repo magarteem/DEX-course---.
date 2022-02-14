@@ -11,7 +11,7 @@
     position: absolute;
     cursor: pointer;
     right: 7px;
-    bottom: 10px;
+    top: 35px;
   }
 }
 .inp .title {
@@ -45,6 +45,6 @@
   background-color: $lightest-grey1;
   color: $lightest-grey;
 }
-.inpErrorValidation {
+.inpErrorValidation > input {
   border: 1px solid $lightest-red;
 }

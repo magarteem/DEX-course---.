@@ -1,0 +1,79 @@
+@import "../../../styles/variable.scss";
+
+.checkBlock {
+  position: relative;
+  $width: 195px;
+  $height: 24px;
+  display: flex;
+  flex-direction: column;
+  height: $height;
+  flex: 0 1 $width;
+  margin-bottom: 24px;
+}
+.flexCheck {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.flexCheck span {
+  font-size: 14px;
+  //margin-left: 10px;
+}
+.flexCheck input {
+  display: none;
+}
+.checkbox {
+  $bor-radius: 2px;
+  //position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  width: 12px;
+  height: 12px;
+  border: 1px solid $light-grey;
+  border-radius: $bor-radius;
+  transition: all 0.2s;
+}
+.checkbox svg {
+  position: absolute;
+  display: none;
+}
+.checkbox span {
+  position: absolute;
+  left: 20px;
+  width: 100%;
+  //margin-left: 50px;
+}
+
+.flexCheck input:checked ~ label svg {
+  display: block;
+}
+.flexCheck input:hover ~ label {
+  border: 1px solid $red;
+}
+.flexCheck input:disabled ~ label {
+  border: 1px solid $lightest-grey;
+  background-color: $lightest-grey1;
+}
+.flexCheck input:checked:disabled ~ label {
+  border: 1px solid $lightest-grey;
+  background-color: $lightest-grey;
+}
+.flexCheck input:checked ~ label {
+  background-color: $red;
+  border: 1px solid $red;
+}
+/* error */
+.checkError {
+  top: 15px;
+  font-size: 12px;
+  position: absolute;
+  color: $lightest-red;
+}
+.errorCheckbox label {
+  border: 1px solid $lightest-red;
+}
+.errorCheckbox span {
+  color: $lightest-red;
+}

@@ -1,0 +1,105 @@
+@import "../../../../styles/variable.scss";
+
+.header {
+  display: flex;
+  width: 100%;
+  margin-bottom: 3px;
+}
+.contentHeader {
+  $bor-radius: 10px;
+  $height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: 0 1 100%;
+  height: $height;
+  box-shadow: 0px 1px 10px rgba(209, 209, 209, 0.5);
+  border-radius: $bor-radius;
+}
+
+/******** burger */
+.burger375px {
+  position: relative;
+  height: 24px;
+  width: 24px;
+  display: none;
+  margin-left: 20px;
+  cursor: pointer;
+}
+.spanBurger,
+.spanBurger::before,
+.spanBurger::after {
+  position: absolute;
+  display: block;
+  border-radius: 2px;
+  height: 2px;
+  width: 18px;
+  top: 0;
+  left: 0;
+  background-color: $lightest-grey;
+  transition: 0.4s;
+}
+.spanBurger::before {
+  content: "";
+  top: -5px;
+}
+.spanBurger::after {
+  content: "";
+  top: 5px;
+}
+
+.burger375px:hover .spanBurger {
+  background-color: transparent;
+}
+.burger375px:hover .spanBurger::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+.burger375px:hover .spanBurger::after {
+  top: 0;
+  transform: rotate(-45deg);
+}
+/*  */
+
+.logo {
+  margin-left: 60px;
+}
+.infoUser {
+  display: flex;
+  align-items: center;
+  margin-right: 60px;
+}
+.infoUser img {
+  margin-left: 16px;
+}
+
+/* media header */
+/*! 767px */
+@media (max-width: 767px) {
+  .logo {
+    margin-left: 20px;
+  }
+  .infoUser {
+    margin-right: 20px;
+  }
+}
+/*! 575px */
+@media (max-width: 575px) {
+  .logo {
+    margin-right: 20px;
+  }
+  .infoUser {
+    display: none;
+  }
+
+  .burger375px {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .spanBurger {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
