@@ -1,4 +1,8 @@
 .content {
-  //  background-color: rgb(240, 137, 3);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
   flex: 0 1 100%;
+  padding: 32px 80px;
 }

@@ -1,0 +1,30 @@
+.searchInput {
+  position: relative;
+  height: var(--height);
+  flex: 0 1 var(--width);
+  transition: var(--transition);
+  min-width: 120px;
+}
+.searchInput input {
+  border: 1px solid var(--lightest-grey);
+  height: 100%;
+  width: 100%;
+  padding: 0 25px 0 12px;
+  color: var(--grey);
+  border-radius: var(--bor-radius);
+}
+.searchInput input::placeholder {
+  color: var(--grey);
+}
+.searchInput input:focus {
+  box-shadow: 0px 0px 5px #d9d9d9;
+}
+.searchInput input:focus::placeholder {
+  color: transparent;
+}
+.searchInput svg {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}

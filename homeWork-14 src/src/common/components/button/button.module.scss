@@ -12,7 +12,7 @@
 }
 .btnAdd {
   margin-left: 20px;
-  --width: 104px;
+  $width: 104px;
   flex: 0 1 $width;
   height: $height;
   background-color: $red;
@@ -39,7 +39,7 @@
 
 .btnCancel {
   margin-left: 20px;
-  --width: 170px;
+  $width: 170px;
   flex: 0 1 $width;
   height: $height;
   background-color: #fff;

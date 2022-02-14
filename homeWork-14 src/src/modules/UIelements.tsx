@@ -67,15 +67,15 @@ export const UIelements = () => {
 
   return (
     <div>
-      <section>
+      {/*<section>
         <h2>Input</h2>
         <label className={s.inp}>
           <span className={s.title}>Login</span>
           <input disabled={false} />
           <span className={s.error}>Required</span>
         </label>
-      </section>
-      <section>
+      </section>*/}
+      {/*<section>
         <h2>Button</h2>
         <button disabled={false} className={s.btn}>
           Sign In
@@ -86,8 +86,8 @@ export const UIelements = () => {
         <button disabled={false} className={s.btnCancel}>
           Cancel
         </button>
-      </section>
-      <section>
+      </section>*/}
+      {/*<section>
         <h2>Search</h2>
         <label className={s.searchInput}>
           <input placeholder="Search..." />
@@ -106,8 +106,8 @@ export const UIelements = () => {
             />
           </svg>
         </label>
-      </section>
-      <section>
+      </section>*/}
+      {/*<section>
         <h2>Notification</h2>
         <div className={s.notification}>
           User with the specified username / password was not found.
@@ -138,11 +138,11 @@ export const UIelements = () => {
             You must be accept the agreement.
           </span>
         </div>
-      </section>
-      <section>
-        <h2>Link</h2>
-        {/*//s.link + " " + s.disableLink = disabled*/}
-        <Link className={s.link} to="/">
+      </section>*/}
+      {/*<section>
+        <h2>Link</h2>*/}
+      {/*//s.link + " " + s.disableLink = disabled*/}
+      {/*<Link className={s.link} to="/">
           Text
         </Link>
       </section>
@@ -162,7 +162,7 @@ export const UIelements = () => {
             </div>
           </div>
         </header>
-      </section>
+      </section>*/}
       <section>
         <h2>Multiselect</h2>
         <Select options={options} styles={colorStyles} menuIsOpen isMulti />
