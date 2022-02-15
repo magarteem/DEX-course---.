@@ -9,8 +9,7 @@ import { InButton } from "../../../common/components/button/InButton";
 import { Context } from "../../../contextProvider/ContextProvider";
 
 export const SignInForm = () => {
-  //@ts-ignore
-  const { auth, login } = useContext(Context);
+  const { auth, login }: any = useContext(Context);
 
   const [eye, setEye] = useState(true);
   const passWatchFu = () => {

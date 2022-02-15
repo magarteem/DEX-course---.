@@ -8,8 +8,7 @@ import { CardsPlayer } from "./pages/general/main/content/cards/CardsPlayer";
 import { CardsTeam } from "./pages/general/main/content/cards/CardsTeam";
 
 export const Routers = () => {
-  //@ts-ignore
-  const { auth, login } = useContext(Context);
+  const { auth, login }: any = useContext(Context);
   console.log(auth);
 
   return (
