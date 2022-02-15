@@ -1,21 +1,35 @@
-import React from "react";
-import { Route, Routes } from "react-router-dom";
-import { Autharization } from "./pages/autharization/Autharization";
-import { SignInForm } from "./pages/autharization/signIn/SignInForm";
-import { SignUpForm } from "./pages/autharization/signUp/SignUpForm";
+import React, { useContext } from "react";
+import { Navigate, Route, Routes } from "react-router-dom";
+import { Context } from "../contextProvider/ContextProvider";
+import { SignInForm } from "./pages/autharization/SignInForm";
+import { SignUpForm } from "./pages/autharization/SignUpForm";
 import { General } from "./pages/general/General";
+import { CardsPlayer } from "./pages/general/main/content/cards/CardsPlayer";
+import { CardsTeam } from "./pages/general/main/content/cards/CardsTeam";
 
 export const Routers = () => {
-  const auth = true;
+  //@ts-ignore
+  const { auth, login } = useContext(Context);
+  console.log(auth);
+
   return (
     <>
-      <Routes>
-        <Route path="/" element={auth ? <General /> : <SignInForm />} />
-        <Route>
-          <Route path="in" element={<SignInForm />} />
-          <Route path="up" element={<SignUpForm />} />
-        </Route>
-      </Routes>
+      {
+        <Routes>
+          {auth ? (
+            <Route>
+              <Route path="/" element={<Navigate to="/login" />} />
+              <Route path="login" element={<SignInForm />} />
+              <Route path="registration" element={<SignUpForm />} />
+            </Route>
+          ) : (
+            <Route path="/*" element={<General />}>
+              <Route index element={<CardsTeam />} />
+              <Route path="player" element={<CardsPlayer />} />
+            </Route>
+          )}
+        </Routes>
+      }
     </>
   );
 };
@@ -54,3 +68,11 @@ export const Routers = () => {
 //<Route path="memo" element={<MemoUseCalback />} />
 //<Route path="*" element={<NotFound />} />
 //</Routes>
+
+/*<Routes>
+        <Route path="/" element={auth ? <General /> : <SignInForm />} />
+        <Route>
+          <Route path="in" element={<SignInForm />} />
+          <Route path="up" element={<SignUpForm />} />
+        </Route>
+      </Routes>*/

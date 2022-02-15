@@ -1,0 +1,15 @@
+@import "../../../styles/variable.scss";
+
+.notification {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  $width: 470px;
+  flex: 0 1 $width;
+  height: $height;
+  background-color: $light-red;
+  border-radius: $bor-radius;
+  color: #fff;
+  font-size: 16px;
+  padding: 0 5px;
+}

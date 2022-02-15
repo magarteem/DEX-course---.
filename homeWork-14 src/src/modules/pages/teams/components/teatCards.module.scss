@@ -1,0 +1,158 @@
+@import "../../../../styles/variable.scss";
+
+.cardTeam {
+  flex: 0 1 $width-card;
+  overflow: hidden;
+}
+.teamTitle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: $height-card-title;
+  color: $red;
+  border: 0.5px solid $light-grey;
+  border-radius: 10px 10px 0px 0px;
+  padding: 0 32px;
+}
+.teamTitle span {
+  color: $red;
+  font-size: 14px;
+}
+.teamTitle__text {
+  color: $light-grey !important;
+}
+.iconEdit {
+  display: flex;
+  align-items: center;
+}
+.iconEdit img:nth-child(1) {
+  margin-right: 16px;
+}
+.teamInfo {
+  background: linear-gradient(95deg, #707070 0%, #393939 100.28%);
+  border-radius: 0px 0px 10px 10px;
+  height: 404px;
+  padding: 65px 146px;
+  display: flex;
+  align-items: center;
+}
+.teamLogo {
+  flex: 0 1 40%;
+}
+.teamText {
+  height: 100%;
+  flex: 0 1 60%;
+  color: $white-color;
+}
+.__flexText {
+  height: 85%;
+  padding-top: 40px;
+  display: flex;
+}
+.teamText h1 {
+  font-size: 36px;
+  font-weight: 800;
+}
+.teamText h4 {
+  font-size: 24px;
+  font-weight: 800;
+  padding-bottom: 8px;
+}
+.teamText span {
+  font-size: 18px;
+}
+.left50 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 0 1 65%;
+  flex-wrap: wrap;
+}
+.rig50 {
+  flex: 0 1 35%;
+}
+/* media team */
+/*! 1100px */
+@media (max-width: 1100px) {
+  .teamInfo {
+    padding: 65px 50px;
+  }
+  .rig50 {
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+/*! 767px */
+@media (max-width: 767px) {
+  .teamLogo img {
+    height: 170px;
+  }
+  .teamInfo {
+    height: 280px;
+    padding: 48px 20px;
+    align-items: flex-start;
+  }
+  .teamText h1 {
+    font-size: 30px;
+  }
+  .teamText h4 {
+    font-size: 21px;
+  }
+  .teamText span {
+    font-size: 15px;
+  }
+  .left50 {
+    flex: 0 1 70%;
+  }
+  .rig50 {
+    flex: 0 1 30%;
+  }
+}
+/*! 576px */
+@media (max-width: 576px) {
+  .teamLogo {
+    margin-bottom: 48px;
+  }
+  .teamLogo img {
+    height: 120px;
+  }
+  .teamInfo {
+    height: auto;
+    flex-direction: column;
+    align-items: center;
+  }
+  .teamText {
+    text-align: center;
+  }
+
+  .__flexText {
+    flex-direction: column;
+    padding-top: 48px;
+  }
+  .left50 div:last-child {
+    padding-top: 32px;
+  }
+  .rig50 {
+    justify-content: center;
+    padding-top: 32px;
+  }
+}
+/*! 375px */
+@media (max-width: 375px) {
+  .teamTitle {
+    padding: 0 16px;
+  }
+  .teamTitle span {
+    font-size: 13px;
+  }
+  .teamLogo img {
+    height: 90px;
+  }
+  .teamText h1,
+  .teamText h4 {
+    font-size: 17px;
+  }
+  .teamText span {
+    font-size: 15px;
+  }
+}

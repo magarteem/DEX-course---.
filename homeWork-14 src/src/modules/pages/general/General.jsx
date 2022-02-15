@@ -1,13 +1,18 @@
 import React from 'react'
-import { Header } from './header/Header';
 import s from './general.module.scss';
-import { Main } from './main/Main';
+import { Navigation } from '../../../common/components/navigation/Navigation';
+import { Aside } from './main/aside/Aside';
+import { Content } from './main/content/Content';
 
 export const General = () => {
     return (
         <>
-            <Header />
-            <Main />
+            <Navigation />
+
+            <main className={s.main}>
+                <Aside />
+                <Content />
+            </main>
         </>
     )
 }

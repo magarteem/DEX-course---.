@@ -13,3 +13,5 @@ export const LinkElements: FC<Props> = ({ to, children }) => {
     </Link>
   );
 };
+
+//s.link + " " + s.disableLink = disabled

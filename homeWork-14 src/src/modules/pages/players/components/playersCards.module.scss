@@ -1,0 +1,152 @@
+@import "../../../../styles/variable.scss";
+
+.playerInfo {
+  background: linear-gradient(95deg, #707070 0%, #393939 100.28%);
+  border-radius: 0px 0px 10px 10px;
+  height: 525px;
+  padding-top: 65px;
+  display: flex;
+  align-items: flex-end;
+}
+.playerLogo {
+  flex: 0 1 55%;
+}
+.playerText {
+  height: 100%;
+  flex: 0 1 45%;
+  color: $white-color;
+}
+.playerTitle__text {
+  color: $light-red;
+  font-size: 36px;
+  font-weight: 800;
+}
+.playerText h1 {
+  font-size: 36px;
+  font-weight: 800;
+}
+.playerText h4 {
+  font-size: 24px;
+  font-weight: 800;
+  padding-bottom: 8px;
+}
+.playerText span {
+  font-size: 18px;
+}
+.playerLeft50 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 0 1 50%;
+  flex-wrap: wrap;
+}
+.__playerFlexText {
+  height: 85%;
+  padding: 40px 0 30px;
+  display: flex;
+}
+.playerRig50 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 0 1 50%;
+}
+.emptyBlock {
+  height: 50px;
+}
+
+/*  */
+/*  */
+/*! 1100px */
+@media (max-width: 1100px) {
+  .playerInfo {
+    padding: 65px 10px 0;
+  }
+  .playerRig50 {
+    display: flex;
+  }
+}
+/*! 991px */
+@media (max-width: 991px) {
+  .playerLogo img {
+    height: 400px;
+  }
+  .playerText h1 {
+    line-height: 40px;
+  }
+  .playerRig50,
+  .playerLeft50 {
+    justify-content: space-evenly;
+  }
+}
+/*! 767px */
+@media (max-width: 767px) {
+  .playerLogo img {
+    height: 265px;
+  }
+  .playerInfo {
+    padding: 0 0 16px;
+    height: auto;
+    align-items: center;
+    flex-direction: column;
+  }
+  .playerText {
+    text-align: center;
+  }
+  .__playerFlexText {
+    flex-direction: column;
+    padding: 0;
+  }
+  .playerText h1 {
+    font-size: 30px;
+    margin: 48px 0;
+  }
+  .playerText h4 {
+    font-size: 21px;
+  }
+  .playerText span {
+    font-size: 15px;
+  }
+  .playerLeft50 {
+    flex: 0 1 70%;
+  }
+  .playerLeft50 div {
+    margin-bottom: 32px;
+  }
+  .playerRig50 {
+    flex: 0 1 30%;
+  }
+  .playerRig50 div {
+    margin-bottom: 32px;
+  }
+  .playerRig50 div:last-child {
+    display: none;
+  }
+}
+/*! 576px */
+@media (max-width: 576px) {
+  .playerInfo {
+    flex-direction: column;
+    align-items: center;
+  }
+  .playerText {
+    text-align: center;
+  }
+}
+/*! 375px */
+@media (max-width: 375px) {
+  .playerInfo {
+    padding: 10px 0 16px;
+  }
+  .playerLogo img {
+    height: 112px;
+  }
+  .playerText h1,
+  .playerText h4,
+  .playerTitle__text {
+    font-size: 17px;
+  }
+  .playerText span {
+    font-size: 15px;
+  }
+}

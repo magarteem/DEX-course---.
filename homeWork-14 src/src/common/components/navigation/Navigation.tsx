@@ -1,9 +1,9 @@
 import React from "react";
-import s from "./header.module.scss";
-import logo from "../../../../assets/icons/logo.webp";
-import userIcon from "../../../../assets/icons/userIcon.webp";
+import s from "./navigation.module.scss";
+import logo from "../../../assets/icons/logo.webp";
+import userIcon from "../../../assets/icons/userIcon.webp";
 
-export const Header = () => {
+export const Navigation = () => {
   return (
     <header className={s.header}>
       <div className={s.contentHeader}>

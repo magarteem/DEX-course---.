@@ -1,21 +1,27 @@
-import { useState } from "react";
-import st from "../autharization.module.scss";
-import s from "../form/form.module.scss";
-import { LinkElements } from "../../../../common/components/link/LinkElement";
-import { Input } from "../../../../common/components/input/Input";
-import signIn from "../../../../assets/images/signIn.png";
+import { useContext, useState } from "react";
+import s from "./form.module.scss";
+import { LinkElements } from "../../../common/components/link/LinkElement";
+import { Input } from "../../../common/components/input/Input";
+import signIn from "../../../assets/images/signIn.png";
 import { useForm } from "react-hook-form";
-import { InButton } from "../../../../common/components/button/InButton";
-import { useNavigate } from "react-router-dom";
+import { InButton } from "../../../common/components/button/InButton";
+//import { useNavigate } from "react-router-dom";
+import { Context } from "../../../contextProvider/ContextProvider";
 
 export const SignInForm = () => {
+  //@ts-ignore
+  const { auth, login } = useContext(Context);
+
   const [eye, setEye] = useState(true);
   const passWatchFu = () => {
     setEye((prev) => !prev);
   };
 
-  const navigate = useNavigate();
-  const goHome = () => navigate("/", { replace: true });
+  //const navigate = useNavigate();
+  //const goHome = () => navigate("/", { replace: true });
+  const goHome = () => {
+    login();
+  };
 
   const {
     register,
@@ -29,7 +35,7 @@ export const SignInForm = () => {
   };
   return (
     <div className={s.test}>
-      <section className={st.autharization}>
+      <section className={s.autharization}>
         <div className={s.formAuth}>
           <h1>Sign In</h1>
 
@@ -66,14 +72,14 @@ export const SignInForm = () => {
             <div className={s.memberPass}>
               <span>
                 Not a member yet?&ensp;
-                <LinkElements to="/up">Sign up</LinkElements>
+                <LinkElements to="/registration">Sign up</LinkElements>
               </span>
             </div>
           </form>
         </div>
       </section>
 
-      <section className={st.autharizationImg}>
+      <section className={s.autharizationImg}>
         <img src={signIn} alt="signIn" />
       </section>
     </div>

@@ -1,6 +1,43 @@
+@import "../../../styles/variable.scss";
+
 .cardsItem {
   flex: 0 1 365px;
-  //  flex: 0 1 25%;
   height: 380px;
-  background-color: aqua;
+  border-radius: var(--bor-radius);
+
+  .__logo {
+    background: linear-gradient(121.57deg, #707070 1.62%, #393939 81.02%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 365px;
+    height: 280px;
+    //img.team {
+    //  background-color: aliceblue;
+    //}
+    img.player {
+      align-self: flex-end;
+    }
+  }
+
+  .cardsInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: #303030;
+    height: 100px;
+    text-align: center;
+    .__position {
+      margin: auto;
+      h2 {
+        font-size: 18px;
+        color: var(--white-color);
+        margin-bottom: 15px;
+      }
+      //span.__foundatione {
+      //  font-size: 14px;
+      //  color: var(--light-grey);
+      //}
+    }
+  }
 }
