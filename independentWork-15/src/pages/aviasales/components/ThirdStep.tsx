@@ -1,21 +1,13 @@
 import { FC } from "react";
 import styled from "styled-components";
-import { StepsDataFieldType } from "../../../App";
 import { Input } from "../../../ui/Input";
 
 //Реализовать форму третьего шага
-
 interface Props {
-  inputFieldValue: StepsDataFieldType;
   changeStep: (step: number) => void;
-  onChangeValue: (value: string) => void;
 }
 
-export const ThirdStep: FC<Props> = ({
-  changeStep,
-  onChangeValue,
-  inputFieldValue,
-}) => {
+export const ThirdStep: FC<Props> = ({ changeStep }) => {
   const handleSubmit = (event: any, page: number) => {
     event.preventDefault();
 

@@ -1,4 +1,4 @@
-import React, { FC, memo } from "react";
+import React, { FC } from "react";
 import styled from "styled-components";
 
 export interface StepsChangeType {
@@ -34,8 +34,6 @@ export const Switch: FC<SwitchProps> = ({
   );
 };
 
-//====================
-
 const ContainerSwitch = styled.label`
   display: flex;
   justify-content: center;
@@ -64,19 +62,3 @@ const ContainerSwitch = styled.label`
     color: #ffffff;
   }
 `;
-
-//export const Switch: FC = () => {
-//  // const changeValue = (event:)
-//  return (
-//    <div></div>
-//    // <Container>
-//    //   <input
-//    //     checked={value}
-//    //     type="checkbox"
-//    //     name="name"
-//    //     id="text"
-//    //     onChange={changeValue}
-//    //   />
-//    // </Container>
-//  );
-//};

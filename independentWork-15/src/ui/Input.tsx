@@ -68,31 +68,3 @@ export const Input: FC<InputProps> = ({
     </ContainerLabel>
   );
 };
-
-//const Container = styled.div`
-//  display: flex;
-//  flex-direction: column;
-//  row-gap: 6px;
-//`;
-
-//interface InputProps {
-//  inputType: "text" | "password" | "number";
-//  name: string;
-//  id: string;
-//  label: string;
-//  placeholder: string;
-//}
-//export const Input: FC<InputProps> = ({
-//  inputType,
-//  name,
-//  id,
-//  label,
-//  placeholder,
-//}) => {
-//  return (
-//    <Container>
-//      <label htmlFor={id}>{label}</label>
-//      <input type={inputType} name={name} id={id} placeholder={placeholder} />
-//    </Container>
-//  );
-//};

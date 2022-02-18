@@ -1,6 +1,6 @@
 import { FC, useState } from "react";
 import styled from "styled-components";
-import { SecondStepType, StepsDataFieldType } from "../../../App";
+import { SecondStepType } from "../../../App";
 import { Input } from "../../../ui/Input";
 
 const Navigate = styled.div`
@@ -24,17 +24,13 @@ const Button = styled.button`
   }
 `;
 interface Props {
-  inputFieldValue: StepsDataFieldType;
   changeStep: (step: number) => void;
-  onChangeValue: (value: string) => void;
   onChangeSecondStep?: any;
   secondStep: SecondStepType;
 }
 
 export const SecondStep: FC<Props> = ({
   changeStep,
-  onChangeValue,
-  inputFieldValue,
   onChangeSecondStep,
   secondStep,
 }) => {
@@ -81,10 +77,3 @@ export const SecondStep: FC<Props> = ({
     </form>
   );
 };
-
-//Реализовать форму второго шага
-//Сделать контейнер для кнопочек
-
-//export const SecondStep: FC = () => {
-//  return <form action="#"></form>;
-//};

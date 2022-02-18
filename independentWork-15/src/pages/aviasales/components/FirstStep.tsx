@@ -1,8 +1,6 @@
 import { FC, useState } from "react";
 import { Input } from "../../../ui/Input";
-
 import styled from "styled-components";
-import { StepsDataFieldType } from "../../../App";
 
 //Реализовать форму первого шага
 const Button = styled.button`
@@ -22,17 +20,13 @@ const Button = styled.button`
 `;
 
 interface Props {
-  inputFieldValue: StepsDataFieldType;
   changeStep: (step: number) => void;
-  onChangeValue: (value: any) => void;
   onChangeFirstStep?: any;
   firstStep?: any;
 }
 
 export const FirstStep: FC<Props> = ({
   changeStep,
-  onChangeValue,
-  inputFieldValue,
   onChangeFirstStep,
   firstStep,
 }) => {
@@ -49,7 +43,7 @@ export const FirstStep: FC<Props> = ({
     });
     changeStep(2);
   };
-  //console.log(firstStep);
+
   return (
     <form action="#" onSubmit={handleSubmit}>
       <Input
@@ -75,12 +69,3 @@ export const FirstStep: FC<Props> = ({
     </form>
   );
 };
-
-//export const FirstStep: FC = () => {
-//  return (
-//    <form action="#">
-//      <Input />
-//      <input />
-//    </form>
-//  );
-//};

@@ -1,8 +1,10 @@
-import React, { FC, useCallback, useState } from "react";
+import React, { FC, useEffect, useState } from "react";
 import "./styles.css";
 import { Aviasales } from "./pages/aviasales/Aviasales";
 import { StepIndicator } from "./pages/aviasales/components/StepsIndicator";
 
+//
+// увы пока готово на половину
 //
 interface FirstStepType {
   where: string;
@@ -12,33 +14,6 @@ export interface SecondStepType {
   departure: string;
   returns: string;
 }
-//
-export interface Step1Type {
-  where: string;
-  going: string;
-}
-export interface StepsDataFieldType {
-  step1: Step1Type;
-  step2: {
-    departure: string;
-    return: string;
-  };
-  step3: {
-    text: string;
-    text1: string;
-  };
-}
-export interface StepsDataFieldType {
-  step1: Step1Type;
-  step2: {
-    departure: string;
-    return: string;
-  };
-  step3: {
-    text: string;
-    text1: string;
-  };
-}
 
 export const App: FC = () => {
   //? свич
@@ -46,30 +21,7 @@ export const App: FC = () => {
   const changeStep = (step: number) => {
     setCurrentStep(step);
   };
-
-  // ?
-  const stepsDataField: StepsDataFieldType = {
-    step1: {
-      where: "11111",
-      going: "2222222",
-    },
-    step2: {
-      departure: "",
-      return: "",
-    },
-    step3: {
-      text: "",
-      text1: "",
-    },
-  };
-
-  //? //////////
-  const [inputFieldValue, setInputFieldValue] = useState(stepsDataField);
-  const onChangeValue = (e: string) => {
-    console.log(inputFieldValue);
-  };
-
-  //? ///////////////////////////////////////////
+  //==============================
   const [firstStep, setfirstStep] = useState({
     where: "",
     going: "",
@@ -79,11 +31,9 @@ export const App: FC = () => {
     rev = e;
     setfirstStep(rev);
   };
-  //? //////////////////////////////////////////
 
-  //? ///////////////////////////////////////////
   const [secondStep, setSecondStep] = useState({
-    departure: "275760-03-04",
+    departure: "",
     returns: "",
   });
   const onChangeSecondStep = (e: SecondStepType) => {
@@ -91,7 +41,16 @@ export const App: FC = () => {
     rev1 = e;
     setSecondStep(rev1);
   };
-  //? //////////////////////////////////////////
+
+  useEffect(() => {
+    console.log("шаг 1");
+    console.log(firstStep);
+  }, [firstStep]);
+
+  useEffect(() => {
+    console.log("шаг 2");
+    console.log(secondStep);
+  }, [secondStep]);
 
   return (
     <div className="App">
@@ -106,8 +65,6 @@ export const App: FC = () => {
       </div>
 
       <Aviasales
-        inputFieldValue={inputFieldValue}
-        onChangeValue={onChangeValue}
         currentStep={currentStep}
         changeStep={changeStep}
         //
@@ -122,12 +79,3 @@ export const App: FC = () => {
 };
 
 export default App;
-
-//const changeValue = (event:)
-
-//const onChangeFirstStep = (e: FirstStepType) => {
-//  console.log(e);
-//  let t = { ...firstStep };
-//  t = e;
-//  setfirstStep(t);
-//};
