@@ -1,5 +1,5 @@
 import React from "react";
-import s from "./teatCards.module.scss";
+import s from "./cardsTarget.module.scss";
 import pencil from "../../../../assets/icons/pencil.svg";
 import deleteImg from "../../../../assets/icons/delete.svg";
 import teamLogo from "../../../../assets/icons/teamLogo.webp";

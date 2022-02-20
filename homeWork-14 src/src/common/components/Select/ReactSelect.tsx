@@ -54,5 +54,12 @@ export const ReactSelect = () => {
     }),
   };
 
-  return <Select options={options} styles={colorStyles} menuIsOpen isMulti />;
+  return (
+    <Select
+      options={options}
+      styles={colorStyles}
+      // menuIsOpen
+      isMulti
+    />
+  );
 };

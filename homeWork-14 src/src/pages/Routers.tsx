@@ -1,11 +1,11 @@
 import React, { useContext } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 import { Context } from "../contextProvider/ContextProvider";
-import { SignInForm } from "./pages/autharization/SignInForm";
-import { SignUpForm } from "./pages/autharization/SignUpForm";
-import { General } from "./pages/general/General";
-import { CardsPlayer } from "./pages/general/main/content/cards/CardsPlayer";
-import { CardsTeam } from "./pages/general/main/content/cards/CardsTeam";
+import { SignInForm } from "./autharization/SignInForm";
+import { SignUpForm } from "./autharization/SignUpForm";
+import { General } from "./general/General";
+import { CardsTeam } from "../modules/teams/components/CardsTeam";
+import { CardsPlayer } from "../modules/players/components/CardsPlayer";
 
 export const Routers = () => {
   const { auth, login }: any = useContext(Context);

@@ -1,0 +1,21 @@
+@import "../../styles/variable.scss";
+
+.main {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background-color: $lightest-grey1;
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    flex: 0 1 100%;
+    padding: 32px 80px;
+    //.headContent {
+    //  display: flex;
+    //  justify-content: space-between;
+    //}
+  }
+}

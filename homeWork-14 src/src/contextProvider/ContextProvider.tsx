@@ -10,7 +10,7 @@ export const Context = createContext({});
 export const ContextProvider = ({ children, ...props }: Props) => {
   const navigate = useNavigate();
 
-  const [auth, setAuth] = useState(true);
+  const [auth, setAuth] = useState(false);
 
   const login = () => {
     setAuth((prev) => !prev);

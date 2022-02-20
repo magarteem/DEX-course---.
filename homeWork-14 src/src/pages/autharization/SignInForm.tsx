@@ -1,12 +1,12 @@
 import { useContext, useState } from "react";
 import s from "./form.module.scss";
-import { LinkElements } from "../../../common/components/link/LinkElement";
-import { Input } from "../../../common/components/input/Input";
-import signIn from "../../../assets/images/signIn.png";
+import { LinkElements } from "../../common/components/link/LinkElement";
+import { Input } from "../../common/components/input/Input";
+import signIn from "../../assets/images/signIn.png";
 import { useForm } from "react-hook-form";
-import { InButton } from "../../../common/components/button/InButton";
+import { InButton } from "../../common/components/button/InButton";
 //import { useNavigate } from "react-router-dom";
-import { Context } from "../../../contextProvider/ContextProvider";
+import { Context } from "../../contextProvider/ContextProvider";
 
 export const SignInForm = () => {
   const { auth, login }: any = useContext(Context);

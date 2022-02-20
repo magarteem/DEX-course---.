@@ -1,0 +1,30 @@
+.headContent {
+  display: flex;
+  justify-content: space-between;
+  .__search {
+    display: flex;
+    flex: 0 1 100%;
+    & > label:nth-child(1) {
+      margin-right: 36px;
+    }
+  }
+}
+
+.cards {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  flex: 1 0 auto;
+  padding: 32px 0;
+  gap: 24px;
+  //gap: calc((100% - 90%) / 2);
+}
+//img.team {
+//  margin: auto;
+//  background-color: aliceblue;
+//}
+
+span.__foundatione {
+  font-size: 14px;
+  color: var(--light-grey);
+}

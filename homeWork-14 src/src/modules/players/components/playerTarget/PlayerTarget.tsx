@@ -1,10 +1,10 @@
 import React from "react";
-import s from "./playersCards.module.scss";
+import s from "./playerTarget.module.scss";
 import pencil from "../../../../assets/icons/pencil.svg";
 import deleteImg from "../../../../assets/icons/delete.svg";
 import playerPhoto from "../../../../assets/icons/playerPhoto.webp";
 
-export const PlayersCards = () => {
+export const PlayerTarget = () => {
   return (
     <div className={s.cardTeam}>
       <div className={s.teamTitle}>

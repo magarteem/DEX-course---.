@@ -1,8 +1,8 @@
 import React, { useContext } from 'react'
 import { Link } from 'react-router-dom';
 import s from './aside.module.scss';
-import exit from '../../../../../assets/icons/signOut.png';
-import { Context } from '../../../../../contextProvider/ContextProvider';
+import exit from '../../../assets/icons/signOut.png';
+import { Context } from '../../../contextProvider/ContextProvider';
 
 export const Aside = () => {
     const { auth, login } = useContext(Context);

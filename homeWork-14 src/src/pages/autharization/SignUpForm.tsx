@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import s from "./form.module.scss";
-import { LinkElements } from "../../../common/components/link/LinkElement";
-import signUp from "../../../assets/images/signUp.png";
-import { InButton } from "../../../common/components/button/InButton";
+import { LinkElements } from "../../common/components/link/LinkElement";
+import signUp from "../../assets/images/signUp.png";
+import { InButton } from "../../common/components/button/InButton";
 import { useForm } from "react-hook-form";
-import { Input } from "../../../common/components/input/Input";
-import { Сheckbox } from "../../../common/components/checkbox/Сheckbox";
+import { Input } from "../../common/components/input/Input";
+import { Сheckbox } from "../../common/components/checkbox/Сheckbox";
 import { useNavigate } from "react-router-dom";
 
 export const SignUpForm = () => {
