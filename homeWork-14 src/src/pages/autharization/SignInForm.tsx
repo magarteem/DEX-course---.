@@ -1,25 +1,23 @@
-import { useContext, useState } from "react";
+import { useState } from "react";
 import s from "./form.module.scss";
 import { LinkElements } from "../../common/components/link/LinkElement";
 import { Input } from "../../common/components/input/Input";
 import signIn from "../../assets/images/signIn.png";
 import { useForm } from "react-hook-form";
 import { InButton } from "../../common/components/button/InButton";
-//import { useNavigate } from "react-router-dom";
-import { Context } from "../../contextProvider/ContextProvider";
+import { useAppDispatch } from "../../core/redux/app/hooks";
+import { login } from "../../modules/autharization/autharizationSlice";
+import { useNavigate } from "react-router-dom";
 
 export const SignInForm = () => {
-  const { auth, login }: any = useContext(Context);
+  const dispatch = useAppDispatch();
+  const navigate = useNavigate();
 
-  const [eye, setEye] = useState(true);
-  const passWatchFu = () => {
-    setEye((prev) => !prev);
-  };
-
-  //const navigate = useNavigate();
-  //const goHome = () => navigate("/", { replace: true });
-  const goHome = () => {
-    login();
+  const goHome = () => navigate("/", { replace: true });
+  const onSubmit = (data: any) => {
+    console.log("Отправлено: ", data);
+    dispatch(login());
+    goHome();
   };
 
   const {
@@ -27,11 +25,12 @@ export const SignInForm = () => {
     handleSubmit,
     formState: { errors },
   } = useForm({ mode: "onBlur" });
-
-  const onSubmit = (data: any) => {
-    console.log("Отправлено: ", data);
-    goHome();
+  //----- сравнение паролей
+  const [eye, setEye] = useState(true);
+  const passWatchFu = () => {
+    setEye((prev) => !prev);
   };
+
   return (
     <section className={s.containerAuth}>
       <div className={s.autharization}>

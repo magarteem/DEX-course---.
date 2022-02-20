@@ -1,31 +1,33 @@
-import React, { useContext } from "react";
+import React from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
-import { Context } from "../contextProvider/ContextProvider";
 import { SignInForm } from "./autharization/SignInForm";
 import { SignUpForm } from "./autharization/SignUpForm";
 import { General } from "./general/General";
 import { CardsTeam } from "../modules/teams/components/CardsTeam";
 import { CardsPlayer } from "../modules/players/components/CardsPlayer";
+import { useAppSelector } from "../core/redux/app/hooks";
 
 export const Routers = () => {
-  const { auth, login }: any = useContext(Context);
-  console.log(auth);
+  const isAuth = useAppSelector(
+    (state) => state.autharizationSliseReduser.isAuth
+  );
+  console.log(isAuth);
 
   return (
     <>
       {
         <Routes>
-          {auth ? (
+          {isAuth ? (
+            <Route path="/*" element={<General />}>
+              <Route index element={<CardsTeam />} />
+              <Route path="player" element={<CardsPlayer />} />
+            </Route>
+          ) : (
             <Route>
               <Route path="/" element={<Navigate to="/login" />} />
               <Route path="login" element={<SignInForm />} />
               <Route path="registration" element={<SignUpForm />} />
               <Route path="*" element={<div>404</div>} />
-            </Route>
-          ) : (
-            <Route path="/*" element={<General />}>
-              <Route index element={<CardsTeam />} />
-              <Route path="player" element={<CardsPlayer />} />
             </Route>
           )}
         </Routes>
