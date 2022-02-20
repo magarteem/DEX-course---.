@@ -30,8 +30,8 @@ export const SignUpForm = () => {
   };
 
   return (
-    <div className={s.test}>
-      <section className={s.autharization}>
+    <section className={s.containerAuth}>
+      <div className={s.autharization}>
         <div className={s.formAuth}>
           <h1>Sign Up</h1>
 
@@ -111,11 +111,11 @@ export const SignUpForm = () => {
             </div>
           </form>
         </div>
-      </section>
+      </div>
 
-      <section className={s.autharizationImg}>
+      <div className={s.autharizationImg}>
         <img src={signUp} alt="signUp" />
-      </section>
-    </div>
+      </div>
+    </section>
   );
 };

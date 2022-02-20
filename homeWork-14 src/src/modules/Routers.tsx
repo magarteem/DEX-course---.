@@ -20,6 +20,7 @@ export const Routers = () => {
               <Route path="/" element={<Navigate to="/login" />} />
               <Route path="login" element={<SignInForm />} />
               <Route path="registration" element={<SignUpForm />} />
+              <Route path="*" element={<div>404</div>} />
             </Route>
           ) : (
             <Route path="/*" element={<General />}>

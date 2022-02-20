@@ -33,8 +33,8 @@ export const SignInForm = () => {
     goHome();
   };
   return (
-    <div className={s.test}>
-      <section className={s.autharization}>
+    <section className={s.containerAuth}>
+      <div className={s.autharization}>
         <div className={s.formAuth}>
           <h1>Sign In</h1>
 
@@ -76,11 +76,11 @@ export const SignInForm = () => {
             </div>
           </form>
         </div>
-      </section>
+      </div>
 
-      <section className={s.autharizationImg}>
+      <div className={s.autharizationImg}>
         <img src={signIn} alt="signIn" />
-      </section>
-    </div>
+      </div>
+    </section>
   );
 };
