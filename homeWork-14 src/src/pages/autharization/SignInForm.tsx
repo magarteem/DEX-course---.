@@ -8,6 +8,7 @@ import { InButton } from "../../common/components/button/InButton";
 import { useAppDispatch } from "../../core/redux/app/hooks";
 import { login } from "../../modules/autharization/autharizationSlice";
 import { useNavigate } from "react-router-dom";
+import { signInThunk } from "../../modules/autharization/thunk";
 
 export const SignInForm = () => {
   const dispatch = useAppDispatch();
@@ -16,7 +17,8 @@ export const SignInForm = () => {
   const goHome = () => navigate("/", { replace: true });
   const onSubmit = (data: any) => {
     console.log("Отправлено: ", data);
-    dispatch(login());
+    //dispatch(login());
+    dispatch(signInThunk());
     goHome();
   };
 

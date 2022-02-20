@@ -11,7 +11,6 @@ export const Routers = () => {
   const isAuth = useAppSelector(
     (state) => state.autharizationSliseReduser.isAuth
   );
-  console.log(isAuth);
 
   return (
     <>
