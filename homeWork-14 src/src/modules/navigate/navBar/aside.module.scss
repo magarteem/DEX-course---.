@@ -12,18 +12,20 @@
 
   .navigation {
     padding-top: 15px;
+    text-align: center;
 
-    & > a {
+    a {
       color: $red;
       display: block;
       width: 50px;
       height: 50px;
       margin-bottom: 30px;
     }
-    text-align: center;
-    .teamLink {
+    a svg path {
+      fill: #9c9c9c;
     }
-    .playerLink {
+    a.activ svg path {
+      fill: #e4163a;
     }
   }
 

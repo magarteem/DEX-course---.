@@ -7,8 +7,11 @@ import { useForm } from "react-hook-form";
 import { Input } from "../../common/components/input/Input";
 import { Сheckbox } from "../../common/components/checkbox/Сheckbox";
 import { useNavigate } from "react-router-dom";
+import { useAppDispatch } from "../../core/redux/app/hooks";
+import { signUpThunk } from "../../core/redux/thunk/SignUpThunk";
 
 export const SignUpForm = () => {
+  const dispatch = useAppDispatch();
   const [eye, setEye] = useState(true);
   const passWatchFu = () => {
     setEye((prev) => !prev);
@@ -26,6 +29,7 @@ export const SignUpForm = () => {
 
   const onSubmit = (data: any) => {
     console.log("Отправлено: ", data);
+    dispatch(signUpThunk());
     goHome();
   };
 

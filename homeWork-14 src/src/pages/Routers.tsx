@@ -8,9 +8,7 @@ import { CardsPlayer } from "../modules/players/components/CardsPlayer";
 import { useAppSelector } from "../core/redux/app/hooks";
 
 export const Routers = () => {
-  const isAuth = useAppSelector(
-    (state) => state.autharizationSliseReduser.isAuth
-  );
+  const isAuth = useAppSelector((state) => state.signInSliseReduser.isAuth);
 
   return (
     <>

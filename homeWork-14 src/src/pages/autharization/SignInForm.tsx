@@ -6,15 +6,15 @@ import signIn from "../../assets/images/signIn.png";
 import { useForm } from "react-hook-form";
 import { InButton } from "../../common/components/button/InButton";
 import { useAppDispatch } from "../../core/redux/app/hooks";
-import { login } from "../../modules/autharization/autharizationSlice";
+import { login } from "../../modules/autharization/signInSlise";
 import { useNavigate } from "react-router-dom";
-import { signInThunk } from "../../modules/autharization/thunk";
+import { signInThunk } from "../../core/redux/thunk/SignInThunk";
 
 export const SignInForm = () => {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
-  const goHome = () => navigate("/", { replace: true });
+  const goHome = () => navigate("/player", { replace: false });
   const onSubmit = (data: any) => {
     console.log("Отправлено: ", data);
     //dispatch(login());

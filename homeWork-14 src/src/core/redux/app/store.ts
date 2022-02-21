@@ -1,9 +1,9 @@
 import { configureStore, ThunkAction, Action } from "@reduxjs/toolkit";
-import autharizationSlise from "../../../modules/autharization/autharizationSlice";
+import signInSlise from "../../../modules/autharization/signInSlise";
 
 export const store = configureStore({
   reducer: {
-    autharizationSliseReduser: autharizationSlise,
+    signInSliseReduser: signInSlise,
   },
 });
 

@@ -1,7 +1,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 
-export const signInThunk = createAsyncThunk(
-  `autharization/sign-In`,
+export const signUpThunk = createAsyncThunk(
+  `autharization/sign-Up`,
   async function (_, { rejectWithValue }) {
     try {
       const postData = {
@@ -10,12 +10,13 @@ export const signInThunk = createAsyncThunk(
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
+          userName: "string",
           login: "string",
           password: "string",
         }),
       };
       const response = await fetch(
-        `http://dev.trainee.dex-it.ru/api/1Auth/SignIn`,
+        `http://dev.trainee.dex-it.ru/api/Auth/SignUp`,
         postData
       );
       const data = await response.json();
